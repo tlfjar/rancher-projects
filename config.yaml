@@ -6,33 +6,8 @@ ssh_authorized_keys:
   - ssh-rsa AAAAB3NzaC1yc2EAAAABJQAAAQBh0IY76me3n4TBmahSwOE2BOolhEkgaZDyCKXda419Nzy3vIzx5r2F5keegRUFc64jJ+zpxb6ud7cKlnK2loAopl7pdX+UmlGeDgoW64QjBOlIXxFrRkXhuTl+AeFYC0CbW90qyTTcqmmYoeswWAXE/7rtziDuy367AkLddaY9ZzjxTThphLy97jKJ08x06ovqRiIZsvNOycYtA8PS0NwOsWdqKWKmXYj8agRwjFNvwTyUDMODmUVcIKlJDVmmpOpcQwFsobml1QLXILDpvttMVB5aEHP7ptlCIjou5zMUlQT99r9jsYJS1R2O8ljt9LsniZtGtn7mpD+baKHY07J3 rancher rancher@192.168.2.24
   - ssh-rsa AAAAB3NzaC1yc2EAAAABJQAAAQBh0IY76me3n4TBmahSwOE2BOolhEkgaZDyCKXda419Nzy3vIzx5r2F5keegRUFc64jJ+zpxb6ud7cKlnK2loAopl7pdX+UmlGeDgoW64QjBOlIXxFrRkXhuTl+AeFYC0CbW90qyTTcqmmYoeswWAXE/7rtziDuy367AkLddaY9ZzjxTThphLy97jKJ08x06ovqRiIZsvNOycYtA8PS0NwOsWdqKWKmXYj8agRwjFNvwTyUDMODmUVcIKlJDVmmpOpcQwFsobml1QLXILDpvttMVB5aEHP7ptlCIjou5zMUlQT99r9jsYJS1R2O8ljt9LsniZtGtn7mpD+baKHY07J3 rancher rancher
 hostname: RancherA1
-write_files:
-- enconding: ""
-  content: |-
-    #!/bin/bash
-    write_log () {
-        local message="${1}"
-        logger -t "run-cmd" "${message}"
-        echo "${message}"
-    }
-    write_log "Getting the service using eth0..."
-    ETH0=$(connmanctl services | awk '{ print $3 }' | while read -r s1; do connmanctl services $s1 | grep -q "eth0" && echo "$s1"; done)
-    write_log "eth0 is bound to: ${ETH0}"
-    write_log "Setting up manual net config..."
-    connmanctl config $ETH0 --ipv4 manual 192.168.4.35 255.255.255.0 192.168.2.1 --nameservers 192.168.2.1 8.8.8.8 1.1.1.1
-    connmanctl config $ETH0 --domains trouttcorp.corp
-    connmanctl config $ETH0 --timeservers 0.pfsense.pool.ntp.org
-    connmanctl config $ETH0 --ipv6 off
-    write_log "Restarting connman..."
-    service connman restart
-    write_log "$(connmanctl services $ETH0)"
-    write_log "Network setup done."
-  owner: root:root
-  path: /etc/run-cmd.sh
-  permissions: '0755'
-run_cmd:
-- "/etc/run-cmd.sh"
 k3os:
+    password: Hand_Fruit
     dns_nameservers:
         - 192.168.2.1
         - 8.8.8.8
