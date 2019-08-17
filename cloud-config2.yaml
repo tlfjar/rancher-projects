@@ -1,0 +1,25 @@
+#Cloud_Config
+hostname: ranchera2
+rancher:
+  console: ubuntu
+  docker:
+    engine: docker-18.09.2
+  network:
+    dns:
+      nameservers:
+        - 192.168.4.1
+        - 192.168.2.1
+        - 8.8.8.8
+        - 1.1.1.1
+    interfaces:
+      eth0:
+        dhcp: false
+        address: 192.168.4.33/24
+        gateway: 192.168.4.1
+        mtu: 1500
+ssh_authorized_keys:
+  - ssh-rsa AAAAB3NzaC1yc2EAAAABJQAAAQBh0IY76me3n4TBmahSwOE2BOolhEkgaZDyCKXda419Nzy3vIzx5r2F5keegRUFc64jJ+zpxb6ud7cKlnK2loAopl7pdX+UmlGeDgoW64QjBOlIXxFrRkXhuTl+AeFYC0CbW90qyTTcqmmYoeswWAXE/7rtziDuy367AkLddaY9ZzjxTThphLy97jKJ08x06ovqRiIZsvNOycYtA8PS0NwOsWdqKWKmXYj8agRwjFNvwTyUDMODmUVcIKlJDVmmpOpcQwFsobml1QLXILDpvttMVB5aEHP7ptlCIjou5zMUlQT99r9jsYJS1R2O8ljt9LsniZtGtn7mpD+baKHY07J3 rancher
+  - ssh-rsa AAAAB3NzaC1yc2EAAAABJQAAAQBh0IY76me3n4TBmahSwOE2BOolhEkgaZDyCKXda419Nzy3vIzx5r2F5keegRUFc64jJ+zpxb6ud7cKlnK2loAopl7pdX+UmlGeDgoW64QjBOlIXxFrRkXhuTl+AeFYC0CbW90qyTTcqmmYoeswWAXE/7rtziDuy367AkLddaY9ZzjxTThphLy97jKJ08x06ovqRiIZsvNOycYtA8PS0NwOsWdqKWKmXYj8agRwjFNvwTyUDMODmUVcIKlJDVmmpOpcQwFsobml1QLXILDpvttMVB5aEHP7ptlCIjou5zMUlQT99r9jsYJS1R2O8ljt9LsniZtGtn7mpD+baKHY07J3 rancher rancher@rancher
+  - ssh-rsa AAAAB3NzaC1yc2EAAAABJQAAAQBh0IY76me3n4TBmahSwOE2BOolhEkgaZDyCKXda419Nzy3vIzx5r2F5keegRUFc64jJ+zpxb6ud7cKlnK2loAopl7pdX+UmlGeDgoW64QjBOlIXxFrRkXhuTl+AeFYC0CbW90qyTTcqmmYoeswWAXE/7rtziDuy367AkLddaY9ZzjxTThphLy97jKJ08x06ovqRiIZsvNOycYtA8PS0NwOsWdqKWKmXYj8agRwjFNvwTyUDMODmUVcIKlJDVmmpOpcQwFsobml1QLXILDpvttMVB5aEHP7ptlCIjou5zMUlQT99r9jsYJS1R2O8ljt9LsniZtGtn7mpD+baKHY07J3 rancher rancher@192.168.2.249
+  - ssh-rsa AAAAB3NzaC1yc2EAAAABJQAAAQBh0IY76me3n4TBmahSwOE2BOolhEkgaZDyCKXda419Nzy3vIzx5r2F5keegRUFc64jJ+zpxb6ud7cKlnK2loAopl7pdX+UmlGeDgoW64QjBOlIXxFrRkXhuTl+AeFYC0CbW90qyTTcqmmYoeswWAXE/7rtziDuy367AkLddaY9ZzjxTThphLy97jKJ08x06ovqRiIZsvNOycYtA8PS0NwOsWdqKWKmXYj8agRwjFNvwTyUDMODmUVcIKlJDVmmpOpcQwFsobml1QLXILDpvttMVB5aEHP7ptlCIjou5zMUlQT99r9jsYJS1R2O8ljt9LsniZtGtn7mpD+baKHY07J3 rancher rancher@192.168.2.24
+  - ssh-rsa AAAAB3NzaC1yc2EAAAABJQAAAQBh0IY76me3n4TBmahSwOE2BOolhEkgaZDyCKXda419Nzy3vIzx5r2F5keegRUFc64jJ+zpxb6ud7cKlnK2loAopl7pdX+UmlGeDgoW64QjBOlIXxFrRkXhuTl+AeFYC0CbW90qyTTcqmmYoeswWAXE/7rtziDuy367AkLddaY9ZzjxTThphLy97jKJ08x06ovqRiIZsvNOycYtA8PS0NwOsWdqKWKmXYj8agRwjFNvwTyUDMODmUVcIKlJDVmmpOpcQwFsobml1QLXILDpvttMVB5aEHP7ptlCIjou5zMUlQT99r9jsYJS1R2O8ljt9LsniZtGtn7mpD+baKHY07J3 rancher rancher
