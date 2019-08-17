@@ -18,3 +18,4 @@ k3os:
         - server
         - "--cluster-secret trouttrancher"
         - "--cluster-domain cluster.trouttcorp.corp"
+        - "--disable-agent"
