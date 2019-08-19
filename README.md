@@ -15,3 +15,5 @@ First, it may help to describe my setup:
 Currently, my setup is entirely internal, as I do not yet have direct control of my static IP.  This works out for testing purposes, though it is clearly not what this setup is designed for.  I expect that it will all transition to external DNS's in the future. In the mean time, I am stuck with Unbound on PFsense and internal certificates, which turns out to be a lot more frustrating than initially anticipated.
 
 I will try to document as best as possible why any given file suddenly appears on this repo, either by comments in the file or by updating this readme.  Feel free to message me or bring up issues if I am screwing up anything.
+
+The files will be in accordance with whatever version of an install i am doing at the time.  For example, "rancherserver" is for a regular rancher server, with a self-generated certificate.  I will anonymize other versions a bit more.
