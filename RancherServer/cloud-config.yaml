@@ -25,7 +25,8 @@ write_files:
     content: |
       #!/bin/bash
       wait-for-docker
-      docker run -d --restart=unless-stopped -p 80:80 -p 443:443 rancher/rancher:latest
+      sudo apt update
+      sudo apt install -y open-iscsi
 #I am aware my ssh keys are pretty messy.  I do not know which one of these key/interface combos actually works, and I haven't had time
 #to check.  This is likely also unnecessary, but it doesn't seem to hurt anything.
 ssh_authorized_keys:
