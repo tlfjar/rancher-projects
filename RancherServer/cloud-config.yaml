@@ -21,6 +21,7 @@ rancher:
 
 #I've been messing around with longhorn, which requires open-iscsi.  It also requires a change in open-iscsi's config, which I have not
 #figured out how to streamline into a cloud-config.
+#You can also add a call to install rancher (for the server part) in the below, but I do not as I use a self-signed certificate.
 write_files:
   - path: /etc/rc.local
     permissions: "0755"
