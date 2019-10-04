@@ -142,9 +142,51 @@ Fourth, I'd love to figure out how to fold this all into the RancherOS ISO, and 
 
 # Now for the fun(?) part. Using Rancher 2.x
 
-After you've installed the agents and your cluster has done all of the booting, it's time to install some stuff.  I've already mentioned [Longhorn](https://github.com/longhorn/longhorn), so lets go ahead and get that set up.  
+After you've done all of the above, you will (hopefully) be greeted with the following:
+
+Now, what you have kind of works, with a ton of caveats.  If you want, you can click on apps and just start adding random stuff to see if it'll at least install.  I do not recommend that, because there's still some important things to do.  Follow along below and your life will be easier.
+
+## 1. Enable catalogs
+
+On the top menu of the global view, as shown above, hover over tools, and click on catalogs:
+
+You will be greeted with a friendly screen showing that only the library catalogs are enabled.  There's some good stuff in the library, and you may never need more than what is in it.  Just in case, though, go ahead and enable the other two catalogs:
+
+It will take a second, but doing this puts both library and helm charts in your Apps menu.  I usually turn on the helm incubator as well, though I haven't use anything in it yet.  But it doesn't hurt anything.
+
+## 2. Install Longhorn
+
+One concept in Kubernetes is persistence.  Rancher does not (as far as I am aware) come with persistence built in.  There are options out there, but my favorite is [Longhorn](https://github.com/longhorn/longhorn).  I do not know how it works.  I assume it is some form of magic.  For what I'm doing, it doesn't really matter.  We need persistent storage, and therefore we need longhorn.
+
+First, go to the Global dropdown and find your cluster.  On the right-hand side of that menu, you will see two options, click the one that says "system":
+
+When that opens, click "Apps" on the top menu:
+
+Press "Launch," and you will be greeted with a bunch of apps in catalog form.  search for "Longhorn," and you'll find this:
+
+Click Details, and you'll be taken to a screen full of options.  Go down to configuration options, and fill it out like so:
 
 
-First, do not bother with Nextcloud (or Owncloud).  Yes, they have their own helm charts, freely available in Rancher's App section. But they are kwirky and don't seem to like how ingresses work. I have tried just bypassing the helm chart and using the docker image directly, including one that should work better with the ingress, which is ostensibly also a web server.  No dice there either.
+Basically, don't mess with anything, and then click launch.  The only change is the "minimum cpu", which needs to be changed to "0.1".  I don't know why, but this made a huge difference when I first started adding it to my longhorn deployments.
 
-The solution was [Seafile](https://seafile.com).  It does not have a helm chart, but it is simple enough to use as a regular deployment in Rancher.  For convenience, and to avoid some hair-pulling, I went ahead and included 
+After that, click launch, and wait.  When the bar turns green, you are ready to go.  Feel free to try out other apps, but make sure you click on the "default" project if you are going to do that.  The system project is for things that affect...well... the system.
+
+## 3. Learn to ingress
+
+Remember when I said to use weave as the provider way back when we set up the cluster?  That was for a reason, namely that weave is the only one that I could get to work with an ingress.  To give an example of how to ingress, lets make a way to connect to our Longhorn UI.
+
+First, on the system project, click on "Workloads" on the menu on top of the screen.  You will be brought to a page that looks like this, albeit with less stuff in it:
+
+Click on "Load Balancing":
+
+The next screen will have a button that says "add ingress".  Click it, and you'll be brought to this screen, which you will fill out as shown:
+
+Change <yourinternalsitehere> to whatever your internal site is, click save, and then hop over to PFSense.  Make sure that "DNS Resolver" is active, and add "longhorn.<yourinternalsitehere> in the resolver (I can give instructions on that if needed).  Point that address to ANY of the IP addresses used for your cluster agents EXCEPT the one that actually runs the rancher server.  If you want, you could also set up a load balancer, but I'm not going to both y'all with it at the moment.  Just point it to one of the agents.
+
+Go to whatever site it is, and you should see this:
+
+You can apply this concept endlessly, just make sure that you always set an app that you are launching to "ClusterIP." Rancher gets mad at you if you set it to "LoadBalancer."  Those sentences will make way more sense when you start deploying apps.
+
+# Coming Soon
+
+My last coming soon included some things that I have now abandoned because there were better options.  Most notably, the Nextcloud and Owncloud Helm Charts are irritating to use in this setup, so I used [Seafile](https://seafile.com).  It works flawlessly in Rancher/Kubernetes, except for one thing: there is no helm chart that I have found for it.  Good news is that you can still deploy it easily, but it is kwirky.  Up next in this ever expanding readme will be how exactly to do that, and I plan to add my deployment files to save everyone time in having to do it from scratch.  All explained as best I can.  Stay tuned...again.
