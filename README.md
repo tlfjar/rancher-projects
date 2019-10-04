@@ -144,13 +144,19 @@ Fourth, I'd love to figure out how to fold this all into the RancherOS ISO, and 
 
 After you've done all of the above, you will (hopefully) be greeted with the following:
 
+![Image of Rancher](https://raw.githubusercontent.com/tlfjar/rancher-projects/master/Rancher%20starting%20screen.png)
+
 Now, what you have kind of works, with a ton of caveats.  If you want, you can click on apps and just start adding random stuff to see if it'll at least install.  I do not recommend that, because there's still some important things to do.  Follow along below and your life will be easier.
 
 ## 1. Enable catalogs
 
 On the top menu of the global view, as shown above, hover over tools, and click on catalogs:
 
+![Image of Rancher](https://raw.githubusercontent.com/tlfjar/rancher-projects/master/Rancher%20add%20catalogs.png)
+
 You will be greeted with a friendly screen showing that only the library catalogs are enabled.  There's some good stuff in the library, and you may never need more than what is in it.  Just in case, though, go ahead and enable the other two catalogs:
+
+![Image of Rancher](https://raw.githubusercontent.com/tlfjar/rancher-projects/master/Catalogs.png)
 
 It will take a second, but doing this puts both library and helm charts in your Apps menu.  I usually turn on the helm incubator as well, though I haven't use anything in it yet.  But it doesn't hurt anything.
 
@@ -160,12 +166,21 @@ One concept in Kubernetes is persistence.  Rancher does not (as far as I am awar
 
 First, go to the Global dropdown and find your cluster.  On the right-hand side of that menu, you will see two options, click the one that says "system":
 
+![Image of Rancher](https://raw.githubusercontent.com/tlfjar/rancher-projects/master/Rancher%20menu%20B.png)
+
 When that opens, click "Apps" on the top menu:
+
+![Image of Rancher](https://raw.githubusercontent.com/tlfjar/rancher-projects/master/Rancher%20system%20screen%20A.png)
 
 Press "Launch," and you will be greeted with a bunch of apps in catalog form.  search for "Longhorn," and you'll find this:
 
+![Image of Rancher](https://raw.githubusercontent.com/tlfjar/rancher-projects/master/Longhorn%20screen.png)
+
 Click Details, and you'll be taken to a screen full of options.  Go down to configuration options, and fill it out like so:
 
+![Image of Rancher](https://raw.githubusercontent.com/tlfjar/rancher-projects/master/Longhorn%20settings%201.png)
+
+![Image of Rancher](https://raw.githubusercontent.com/tlfjar/rancher-projects/master/Longhorn%20settings%201.png)
 
 Basically, don't mess with anything, and then click launch.  The only change is the "minimum cpu", which needs to be changed to "0.1".  I don't know why, but this made a huge difference when I first started adding it to my longhorn deployments.
 
@@ -177,13 +192,21 @@ Remember when I said to use weave as the provider way back when we set up the cl
 
 First, on the system project, click on "Workloads" on the menu on top of the screen.  You will be brought to a page that looks like this, albeit with less stuff in it:
 
+![Image of Rancher](https://raw.githubusercontent.com/tlfjar/rancher-projects/master/System%20workloads.png)
+
 Click on "Load Balancing":
 
+![Image of Rancher](https://raw.githubusercontent.com/tlfjar/rancher-projects/master/System%20workloads%20A.png)
+
 The next screen will have a button that says "add ingress".  Click it, and you'll be brought to this screen, which you will fill out as shown:
+
+![Image of Rancher](https://raw.githubusercontent.com/tlfjar/rancher-projects/master/Load%20Balancing%20screen.png)
 
 Change <yourinternalsitehere> to whatever your internal site is, click save, and then hop over to PFSense.  Make sure that "DNS Resolver" is active, and add "longhorn.<yourinternalsitehere> in the resolver (I can give instructions on that if needed).  Point that address to ANY of the IP addresses used for your cluster agents EXCEPT the one that actually runs the rancher server.  If you want, you could also set up a load balancer, but I'm not going to both y'all with it at the moment.  Just point it to one of the agents.
 
 Go to whatever site it is, and you should see this:
+
+![Image of Rancher](https://raw.githubusercontent.com/tlfjar/rancher-projects/master/Longhorn%20ui%20screen.png)
 
 You can apply this concept endlessly, just make sure that you always set an app that you are launching to "ClusterIP." Rancher gets mad at you if you set it to "LoadBalancer."  Those sentences will make way more sense when you start deploying apps.
 
