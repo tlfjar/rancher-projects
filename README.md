@@ -140,11 +140,11 @@ Third, I would like to do my server install directly in the cloud-config file.  
 
 Fourth, I'd love to figure out how to fold this all into the RancherOS ISO, and totally automate the install.  I do not yet know how to pull that off, so I'm putting this into my really, really long-term goals.
 
-# Coming Soon
+# Now for the fun(?) part. Using Rancher 2.x
 
-Here's what's coming up (note that I use the built-in library and helm charts to install everything):
-1. Getting Longhorn up and running (with pictures!).
-2. Installing [SuiteCRM](https://suitecrm.com/).
-3. Installing [DocAssemble](https://docassemble.org/).
-4. Installing [NextCloud](https://nextcloud.com/).
-5. ...and making it all work in the confines of a system none of it was built for.  This is the most fun part. Get ready to smash some keyboards.
+After you've installed the agents and your cluster has done all of the booting, it's time to install some stuff.  I've already mentioned [Longhorn](https://github.com/longhorn/longhorn), so lets go ahead and get that set up.  
+
+
+First, do not bother with Nextcloud (or Owncloud).  Yes, they have their own helm charts, freely available in Rancher's App section. But they are kwirky and don't seem to like how ingresses work. I have tried just bypassing the helm chart and using the docker image directly, including one that should work better with the ingress, which is ostensibly also a web server.  No dice there either.
+
+The solution was [Seafile](https://seafile.com).  It does not have a helm chart, but it is simple enough to use as a regular deployment in Rancher.  For convenience, and to avoid some hair-pulling, I went ahead and included 
