@@ -120,6 +120,8 @@ Repeat the steps above, just use these three cloud-config.yaml files, edited wit
 [cloud-configA2.yaml](rancher-agents/cloud-configA2.yaml)
 [cloud-configA3.yaml](rancher-agents/cloud-configA3.yaml)
 
+#### NOTE(11/10/2019): do not use odd characters for the hostnames of your nodes! use something generic, letters and numbers only, no caps, like "rancherw1," etc...
+
 ### Post-Install Configuration
 
 Once again, we need to modify the open-iscsi files, as follows:
