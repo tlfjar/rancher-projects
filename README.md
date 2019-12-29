@@ -226,5 +226,9 @@ Pardon the incredibly small text, which I assume to be a result of cutting this 
 
 ![Resources Menu](https://raw.githubusercontent.com/tlfjar/rancher-projects/master/Resources%20Page.png)
 
-What you need to know about this for the purposes of the above tutorial is that this is where you can find the original "Workloads" button.
+What you need to know about this for the purposes of the above tutorial is that this is where you can find the original "Workloads" button.  If anything else needs changing here, I will note it appropriately.  It is obvious that a lot more power has been injected into Rancher, and it needs to be explored.  I will try to document what I find as I do so.
+
+# TO DO
+
+This document is entirely too long, and I need to cut it into parts.  I will be doing that in my spare time.  I also need to give a better understanding of what I am doing in front of rancher at the moment, and how I am passing SSL and soforth.  This is probably way beyond the scope of this tutorial, but I will try to put it in its own section.
 
