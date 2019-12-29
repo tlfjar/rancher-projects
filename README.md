@@ -212,6 +212,19 @@ Go to whatever site it is, and you should see this:
 
 You can apply this concept endlessly, just make sure that you always set an app that you are launching to "ClusterIP." Rancher gets mad at you if you set it to "LoadBalancer."  Those sentences will make way more sense when you start deploying apps.
 
-# Coming Soon
+# UPDATE 12/29/2019
 
-My last coming soon included some things that I have now abandoned because there were better options.  Most notably, the Nextcloud and Owncloud Helm Charts are irritating to use in this setup, so I used [Seafile](https://seafile.com).  It works flawlessly in Rancher/Kubernetes, except for one thing: there is no helm chart that I have found for it.  Good news is that you can still deploy it easily, but it is kwirky.  Up next in this ever expanding readme will be how exactly to do that, and I plan to add my deployment files to save everyone time in having to do it from scratch.  All explained as best I can.  Stay tuned...again.
+Okay... Technology changes at an absolutely wacky pace, so I will try to give some updates on the latest happenings.  First, [Longhorn](https://github.com/longhorn/longhorn) has been updated, and is working better than it ever has.  I haven't had an issue with it for some time, which is excellent.  My best recommendation is to just install it and not screw with it. Ever. It will do its magic, and we can all be happy.
+
+[Rancher](https://github.com/rancher/rancher) has also updated, and has added a slew of changes.  Most notable (to me) is the integration of [Istio](https://github.com/istio/istio) pretty tightly into the system.  I must admit that I am not entirely clear on the capabilities of Istio, so I can't say what effect that necessarily has.  The addition of Horizontal Pod Autoscalers (HPAs) is also a big deal, though again I'm not overly familiar with it.  That's not everything that's changed, so I'd recommend a review of the [Release Notes](https://github.com/rancher/rancher/releases/tag/v2.3.3).
+
+The previous tutorial still works just fine, with one notable exception:  the interface looks slightly different.  Compare the workloads section cited above with the new one:
+
+![Image of New rancher](https://raw.githubusercontent.com/tlfjar/rancher-projects/master/New%20Rancher%20Project%20Screen.png)
+
+Pardon the incredibly small text, which I assume to be a result of cutting this from a bigger window.  Anyway, many things are the same, only "Workloads" at the top has changed to a dropdown box labelled "Resources"
+
+![Resources Menu](https://raw.githubusercontent.com/tlfjar/rancher-projects/master/Resources%20Page.png)
+
+What you need to know about this for the purposes of the above tutorial is that this is where you can find the original "Workloads" button.
+
