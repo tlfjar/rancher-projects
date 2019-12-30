@@ -38,4 +38,4 @@ Give it a bit, and you should be able to connect to rancher using its IP address
 7. Leave everything else alone; and
 8. Click "Next."
 
-This will bring you to another screen with an area that has the command you need to run on the nodes. Make sure to check all of the server role boxes, and then [do this.](https://github.com/tlfjar/rancher-projects/blob/master/Install-Rancher-Agent.md)
+This will bring you to another screen with an area that has the command you need to run on the nodes. Make sure to check all of the server role boxes, and then copy what is in the box below it.  Paste that into the Rancher Agents' command prompts, hit enter, and watch as they attach to the server. Hit "next" on the server page, and congratulations, you have a cluster!
