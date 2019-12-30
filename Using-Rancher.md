@@ -18,6 +18,10 @@ You will be greeted with a friendly screen showing that only the library catalog
 
 It will take a second, but doing this puts both library and helm charts in your Apps menu.  I usually turn on the helm incubator as well, though I haven't use anything in it yet.  But it doesn't hurt anything.
 
+## Install Longhorn
+
+You should probably go ahead and follow [this guide](https://github.com/tlfjar/rancher-projects/blob/master/Installing-Longhorn.md) prior to messing with the ingress.  I wrote the below with the assumption that Longhorn would be installed by now.
+
 ## Learn to ingress
 
 Remember when I said to use weave as the provider way back when we set up the cluster?  That was for a reason, namely that weave is the only one that I could get to work with an ingress.  To give an example of how to ingress, lets make a way to connect to our Longhorn UI.
