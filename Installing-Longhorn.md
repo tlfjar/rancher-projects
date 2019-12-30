@@ -23,3 +23,11 @@ Click Details, and you'll be taken to a screen full of options.  Go down to conf
 Basically, don't mess with anything, and then click launch.  The only change is the "minimum cpu", which needs to be changed to "0.1".  I don't know why, but this made a huge difference when I first started adding it to my longhorn deployments.
 
 After that, click launch, and wait.  When the bar turns green, you are ready to go.  Feel free to try out other apps, but make sure you click on the "default" project if you are going to do that.  The system project is for things that affect...well... the system.
+
+## Continue Reading...
+1. [Home](https://github.com/tlfjar/rancher-projects/blob/master/README.md)
+2. [My Office Setup](https://github.com/tlfjar/rancher-projects/blob/master/office-setup.md)
+3. [Installing RancherOS](https://github.com/tlfjar/rancher-projects/blob/master/Install-RancherOS.md)
+4. [Installing Rancher](https://github.com/tlfjar/rancher-projects/blob/master/Install-Rancher-Server.md)
+5. [Using Rancher 2.x](https://github.com/tlfjar/rancher-projects/blob/master/Using-Rancher.md)
+5. [Installing Longhorn](https://github.com/tlfjar/rancher-projects/blob/master/Installing-Longhorn.md)
