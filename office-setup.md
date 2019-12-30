@@ -41,3 +41,11 @@ This is what the actual machines look like in my office:
  ![fileserver](https://github.com/tlfjar/rancher-projects/blob/master/machine-specs/fileserver.png?raw=true)
 
 Please note that my setup is not, by any stretch of the imagination, the best.  I'm not even sure if it is "good," but it works for me.  The tutorials found in this repo do not expect you to go this far.  Indeed, if this is your first time setting up a cluster using Rancher, it would be best not to do this at all, and just make three nodes that handle all three assignments (Etcd, Controlplane, and Worker).
+
+## Continue Reading...
+1. [Home](https://github.com/tlfjar/rancher-projects/blob/master/README.md)
+2. [My Office Setup](https://github.com/tlfjar/rancher-projects/blob/master/office-setup.md)
+3. [Installing RancherOS](https://github.com/tlfjar/rancher-projects/blob/master/Install-RancherOS.md)
+4. [Installing Rancher](https://github.com/tlfjar/rancher-projects/blob/master/Install-Rancher-Server.md)
+5. [Using Rancher 2.x](https://github.com/tlfjar/rancher-projects/blob/master/Using-Rancher.md)
+5. [Installing Longhorn](https://github.com/tlfjar/rancher-projects/blob/master/Installing-Longhorn.md)
