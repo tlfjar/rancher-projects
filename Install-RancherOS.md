@@ -25,3 +25,11 @@ You may have noticed that I added an open-iscsi install into the cloud-config.ya
 NOTE: that was probably totally unnecessary, but it is good practice for doing it three more times shortly, and it doesn't hurt anything.
 
 You'll want to do this a total of four times, once for the VM/Computer that will run Rancher Server, and three more times for the VMs/Computers that will run Rancher Agent.  Be sure to give each VM a unique name, but **do not use odd characters for the hostnames of your nodes! use something generic, letters and numbers only, no caps, like "rancherw1," etc...**
+
+## Continue Reading...
+1. [Home](https://github.com/tlfjar/rancher-projects/blob/master/README.md)
+2. [My Office Setup](https://github.com/tlfjar/rancher-projects/blob/master/office-setup.md)
+3. [Installing RancherOS](https://github.com/tlfjar/rancher-projects/blob/master/Install-RancherOS.md)
+4. [Installing Rancher](https://github.com/tlfjar/rancher-projects/blob/master/Install-Rancher-Server.md)
+5. [Using Rancher 2.x](https://github.com/tlfjar/rancher-projects/blob/master/Using-Rancher.md)
+5. [Installing Longhorn](https://github.com/tlfjar/rancher-projects/blob/master/Installing-Longhorn.md)
