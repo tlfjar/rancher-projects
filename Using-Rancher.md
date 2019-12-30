@@ -45,3 +45,11 @@ Go to whatever site it is, and you should see this:
 ![Image of Rancher](https://raw.githubusercontent.com/tlfjar/rancher-projects/master/Longhorn%20ui%20screen.png)
 
 You can apply this concept endlessly, just make sure that you always set an app that you are launching to "ClusterIP." Rancher gets mad at you if you set it to "LoadBalancer."  Those sentences will make way more sense when you start deploying apps.
+
+## Continue Reading...
+1. [Home](https://github.com/tlfjar/rancher-projects/blob/master/README.md)
+2. [My Office Setup](https://github.com/tlfjar/rancher-projects/blob/master/office-setup.md)
+3. [Installing RancherOS](https://github.com/tlfjar/rancher-projects/blob/master/Install-RancherOS.md)
+4. [Installing Rancher](https://github.com/tlfjar/rancher-projects/blob/master/Install-Rancher-Server.md)
+5. [Using Rancher 2.x](https://github.com/tlfjar/rancher-projects/blob/master/Using-Rancher.md)
+5. [Installing Longhorn](https://github.com/tlfjar/rancher-projects/blob/master/Installing-Longhorn.md)
