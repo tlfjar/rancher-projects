@@ -1,5 +1,5 @@
 #Cloud_Config
-hostname: rancherserver
+hostname: #Give your VM a unique name, but use non-caps letters and numbers only. You can try otherwise, but it caused me issues.
 rancher:
   console: ubuntu
   docker:
@@ -9,19 +9,20 @@ rancher:
     #This should be different on each interface, so I put in both.  This is probably unnecessary.
     dns:
       nameservers:
-        - 192.168.2.1
+        - #Insert your resolver location here for testing purposes
         - 8.8.8.8
         - 1.1.1.1
     interfaces:
+      #Add as many interfaces as needed.  You can also run this with dhcp set to "true", though I don't recommend it for the server,
+      #but it MIGHT be okay for the agents.
       eth0:
         dhcp: false
-        address: 192.168.4.31/24
-        gateway: 192.168.4.1
+        address: #Insert this computer's address here, in Classless inter-domain routing (CIDR) format, i.e. 192.168.1.5/24
+        gateway: #Insert your gateway here.
         mtu: 1500
 
 #I've been messing around with longhorn, which requires open-iscsi.  It also requires a change in open-iscsi's config, which I have not
 #figured out how to streamline into a cloud-config.
-#You can also add a call to install rancher (for the server part) in the below, but I do not as I use a self-signed certificate.
 write_files:
   - path: /etc/rc.local
     permissions: "0755"
@@ -31,11 +32,5 @@ write_files:
       wait-for-docker
       sudo apt update
       sudo apt install -y open-iscsi
-#I am aware my ssh keys are pretty messy.  I do not know which one of these key/interface combos actually works, and I haven't had time
-#to check.  This is likely also unnecessary, but it doesn't seem to hurt anything.
 ssh_authorized_keys:
-  - ssh-rsa AAAAB3NzaC1yc2EAAAABJQAAAQBh0IY76me3n4TBmahSwOE2BOolhEkgaZDyCKXda419Nzy3vIzx5r2F5keegRUFc64jJ+zpxb6ud7cKlnK2loAopl7pdX+UmlGeDgoW64QjBOlIXxFrRkXhuTl+AeFYC0CbW90qyTTcqmmYoeswWAXE/7rtziDuy367AkLddaY9ZzjxTThphLy97jKJ08x06ovqRiIZsvNOycYtA8PS0NwOsWdqKWKmXYj8agRwjFNvwTyUDMODmUVcIKlJDVmmpOpcQwFsobml1QLXILDpvttMVB5aEHP7ptlCIjou5zMUlQT99r9jsYJS1R2O8ljt9LsniZtGtn7mpD+baKHY07J3 rancher
-  - ssh-rsa AAAAB3NzaC1yc2EAAAABJQAAAQBh0IY76me3n4TBmahSwOE2BOolhEkgaZDyCKXda419Nzy3vIzx5r2F5keegRUFc64jJ+zpxb6ud7cKlnK2loAopl7pdX+UmlGeDgoW64QjBOlIXxFrRkXhuTl+AeFYC0CbW90qyTTcqmmYoeswWAXE/7rtziDuy367AkLddaY9ZzjxTThphLy97jKJ08x06ovqRiIZsvNOycYtA8PS0NwOsWdqKWKmXYj8agRwjFNvwTyUDMODmUVcIKlJDVmmpOpcQwFsobml1QLXILDpvttMVB5aEHP7ptlCIjou5zMUlQT99r9jsYJS1R2O8ljt9LsniZtGtn7mpD+baKHY07J3 rancher rancher@rancher
-  - ssh-rsa AAAAB3NzaC1yc2EAAAABJQAAAQBh0IY76me3n4TBmahSwOE2BOolhEkgaZDyCKXda419Nzy3vIzx5r2F5keegRUFc64jJ+zpxb6ud7cKlnK2loAopl7pdX+UmlGeDgoW64QjBOlIXxFrRkXhuTl+AeFYC0CbW90qyTTcqmmYoeswWAXE/7rtziDuy367AkLddaY9ZzjxTThphLy97jKJ08x06ovqRiIZsvNOycYtA8PS0NwOsWdqKWKmXYj8agRwjFNvwTyUDMODmUVcIKlJDVmmpOpcQwFsobml1QLXILDpvttMVB5aEHP7ptlCIjou5zMUlQT99r9jsYJS1R2O8ljt9LsniZtGtn7mpD+baKHY07J3 rancher rancher@192.168.2.249
-  - ssh-rsa AAAAB3NzaC1yc2EAAAABJQAAAQBh0IY76me3n4TBmahSwOE2BOolhEkgaZDyCKXda419Nzy3vIzx5r2F5keegRUFc64jJ+zpxb6ud7cKlnK2loAopl7pdX+UmlGeDgoW64QjBOlIXxFrRkXhuTl+AeFYC0CbW90qyTTcqmmYoeswWAXE/7rtziDuy367AkLddaY9ZzjxTThphLy97jKJ08x06ovqRiIZsvNOycYtA8PS0NwOsWdqKWKmXYj8agRwjFNvwTyUDMODmUVcIKlJDVmmpOpcQwFsobml1QLXILDpvttMVB5aEHP7ptlCIjou5zMUlQT99r9jsYJS1R2O8ljt9LsniZtGtn7mpD+baKHY07J3 rancher rancher@192.168.2.24
-  - ssh-rsa AAAAB3NzaC1yc2EAAAABJQAAAQBh0IY76me3n4TBmahSwOE2BOolhEkgaZDyCKXda419Nzy3vIzx5r2F5keegRUFc64jJ+zpxb6ud7cKlnK2loAopl7pdX+UmlGeDgoW64QjBOlIXxFrRkXhuTl+AeFYC0CbW90qyTTcqmmYoeswWAXE/7rtziDuy367AkLddaY9ZzjxTThphLy97jKJ08x06ovqRiIZsvNOycYtA8PS0NwOsWdqKWKmXYj8agRwjFNvwTyUDMODmUVcIKlJDVmmpOpcQwFsobml1QLXILDpvttMVB5aEHP7ptlCIjou5zMUlQT99r9jsYJS1R2O8ljt9LsniZtGtn7mpD+baKHY07J3 rancher rancher
+  - #Insert your ssh-rsa keys here.
