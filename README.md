@@ -29,6 +29,8 @@ As I am not particularly skilled at coding, do not expect much in the way of run
 
 I have completely revamped my system, doubling the number of workers, running the Rancher Server in a high availability environment, and separating my etcd and controlplane nodes from one another.  I'm testing this now, and if it works, I will be updating with the HA setup.
 
+It also appears that longhorn no longer requires screwing with the files in open-iscsi.  I am testing to confirm this, but that requirement has dissappeared from their instructions.
+
 # UPDATE 12/29/2019
 
 Okay... Technology changes at an absolutely wacky pace, so I will try to give some updates on the latest happenings.  First, [Longhorn](https://github.com/longhorn/longhorn) has been updated, and is working better than it ever has.  I haven't had an issue with it for some time, which is excellent.  My best recommendation is to just install it and not screw with it. Ever. It will do its magic, and we can all be happy.
