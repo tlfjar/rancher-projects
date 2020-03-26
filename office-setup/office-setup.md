@@ -14,31 +14,31 @@ This is my setup.  Kubernetes is quite flexible, so I do not expect you to have 
 
 This is what the actual machines look like in my office:
 
-![ServerSideView](https://github.com/tlfjar/rancher-projects/blob/master/machine-specs/Server%20Setup.jpg?raw=true)
+![ServerSideView](https://github.com/tlfjar/rancher-projects/blob/master/office-setup/Images/Server%20Setup.jpg?raw=true)
 
-![ServerTopView](https://github.com/tlfjar/rancher-projects/blob/master/machine-specs/Top%20Server%20Setup.jpg?raw=true)
+![ServerTopView](https://github.com/tlfjar/rancher-projects/blob/master/office-setup/Images/Top%20Server%20Setup.jpg?raw=true)
 
 
 ## Virtual Machines
  1. Rancher Server, where the server portion of Rancher runs.  There's only one of these, though it would be better to run multiple copies for hardiness.
  
- ![RancherServer](https://github.com/tlfjar/rancher-projects/blob/master/machine-specs/RancherServer.png?raw=true)
+ ![RancherServer](https://github.com/tlfjar/rancher-projects/blob/master/office-setup/Images/RancherServer.png?raw=true)
  
  2. Three (3) Rancher Etcd/Controlplane systems.  Running more than one is a good thing, and using them for solely the purpose of Etcd and Control Plane is evidently also good.  It would be best if I dedicated multiple nodes to just Control Plane and multiple nodes to just Etcd, but it was enough to get the cluster to build with the system I created.
  
- ![EtcdcpNodes](https://github.com/tlfjar/rancher-projects/blob/master/machine-specs/Rancheretcdcp.png?raw=true)
+ ![EtcdcpNodes](https://github.com/tlfjar/rancher-projects/blob/master/office-setup/Images/Rancheretcdcp.png?raw=true)
  
  3. Rancher worker, with SSD storage, found on the same server as the Rancher Server, Rancher Etcd/Controlplane systems.  This gives me at least one speedy(er) node.
  
- ![RancherW1](https://github.com/tlfjar/rancher-projects/blob/master/machine-specs/Rancherw1.png?raw=true)
+ ![RancherW1](https://github.com/tlfjar/rancher-projects/blob/master/office-setup/Images/Rancherw1.png?raw=true)
  
  4. Three (3) Rancher workers with spinning disks.  These are on an entirely different physical server from the above.
  
- ![RancherW2](https://github.com/tlfjar/rancher-projects/blob/master/machine-specs/Rancherw2.png?raw=true)
+ ![RancherW2](https://github.com/tlfjar/rancher-projects/blob/master/office-setup/Images/Rancherw2.png?raw=true)
  
  5. Also, I run a file server with Seafile installed on it.  This is not necessary, but I'm no longer that interested in running large file storage within a cluster.
  
- ![fileserver](https://github.com/tlfjar/rancher-projects/blob/master/machine-specs/fileserver.png?raw=true)
+ ![fileserver](https://github.com/tlfjar/rancher-projects/blob/master/office-setup/Images/fileserver.png?raw=true)
 
 Please note that my setup is not, by any stretch of the imagination, the best.  I'm not even sure if it is "good," but it works for me.  The tutorials found in this repo do not expect you to go this far.  Indeed, if this is your first time setting up a cluster using Rancher, it would be best not to do this at all, and just make three nodes that handle all three assignments (Etcd, Controlplane, and Worker).
 

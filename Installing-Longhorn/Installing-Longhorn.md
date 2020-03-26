@@ -4,21 +4,21 @@ One concept in Kubernetes is persistence.  Rancher does not (as far as I am awar
 
 First, go to the Global dropdown and find your cluster.  On the right-hand side of that menu, you will see two options, click the one that says "system":
 
-![Image of Rancher](https://raw.githubusercontent.com/tlfjar/rancher-projects/master/Rancher%20menu%20B.png)
+![Image of Rancher](https://raw.githubusercontent.com/tlfjar/rancher-projects/master/Installing-Longhorn/Images/Rancher%20menu%20B.png)
 
 When that opens, click "Apps" on the top menu:
 
-![Image of Rancher](https://raw.githubusercontent.com/tlfjar/rancher-projects/master/Rancher%20system%20screen%20A.png)
+![Image of Rancher](https://raw.githubusercontent.com/tlfjar/rancher-projects/master/Installing-Longhorn/Images/Rancher%20system%20screen%20A.png)
 
 Press "Launch," and you will be greeted with a bunch of apps in catalog form.  search for "Longhorn," and you'll find this:
 
-![Image of Rancher](https://raw.githubusercontent.com/tlfjar/rancher-projects/master/Longhorn%20screen.png)
+![Image of Rancher](https://raw.githubusercontent.com/tlfjar/rancher-projects/master/Installing-Longhorn/Images/Longhorn%20screen.png)
 
 Click Details, and you'll be taken to a screen full of options.  Go down to configuration options, and fill it out like so:
 
-![Image of Rancher](https://raw.githubusercontent.com/tlfjar/rancher-projects/master/Longhorn%20settings%201.png)
+![Image of Rancher](https://raw.githubusercontent.com/tlfjar/rancher-projects/master/Installing-Longhorn/Images/Longhorn%20settings%201.png)
 
-![Image of Rancher](https://raw.githubusercontent.com/tlfjar/rancher-projects/master/Longhorn%20settings%202.png)
+![Image of Rancher](https://raw.githubusercontent.com/tlfjar/rancher-projects/master/Installing-Longhorn/Images/Longhorn%20settings%202.png)
 
 Basically, don't mess with anything, and then click launch.  The only change is the "minimum cpu", which needs to be changed to "0.1".  I don't know why, but this made a huge difference when I first started adding it to my longhorn deployments.
 

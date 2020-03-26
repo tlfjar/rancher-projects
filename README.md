@@ -19,11 +19,11 @@ The files will be in accordance with whatever version of an install I am doing a
 As I am not particularly skilled at coding, do not expect much in the way of runfiles and whatnot.  I will do what I can when I figure out how to do it, but I will also do my best to at least put SOMETHING in here to say the steps I took at the command line.
 
 ## Table of Contents
-1. [My Office Setup](https://github.com/tlfjar/rancher-projects/blob/master/office-setup.md)
-2. [Installing RancherOS](https://github.com/tlfjar/rancher-projects/blob/master/Install-RancherOS.md)
-3. [Installing Rancher](https://github.com/tlfjar/rancher-projects/blob/master/Install-Rancher-Server.md)
-4. [Using Rancher 2.x](https://github.com/tlfjar/rancher-projects/blob/master/Using-Rancher.md)
-5. [Installing Longhorn](https://github.com/tlfjar/rancher-projects/blob/master/Installing-Longhorn.md)
+1. [My Office Setup](https://github.com/tlfjar/rancher-projects/blob/master/office-setup/office-setup.md)
+2. [Installing RancherOS](https://github.com/tlfjar/rancher-projects/blob/master/Install-RancherOS/Install-RancherOS.md)
+3. [Installing Rancher](https://github.com/tlfjar/rancher-projects/blob/master/Install-Rancher-Server/Install-Rancher-Server.md)
+4. [Using Rancher 2.x](https://github.com/tlfjar/rancher-projects/blob/master/Using-Rancher/Using-Rancher.md)
+5. [Installing Longhorn](https://github.com/tlfjar/rancher-projects/blob/master/Installing-Longhorn/Installing-Longhorn.md)
 
 # UPDATE 3/26/2020
 
@@ -41,11 +41,11 @@ Okay... Technology changes at an absolutely wacky pace, so I will try to give so
 
 The previous tutorial still works just fine, with one notable exception:  the interface looks slightly different.  Compare the workloads section cited above with the new one:
 
-![Image of New rancher](https://raw.githubusercontent.com/tlfjar/rancher-projects/master/New%20Rancher%20Project%20Screen.png)
+![Image of New rancher](https://raw.githubusercontent.com/tlfjar/rancher-projects/master/Images/New%20Rancher%20Project%20Screen.png)
 
 Pardon the incredibly small text, which I assume to be a result of cutting this from a bigger window.  Anyway, many things are the same, only "Workloads" at the top has changed to a dropdown box labelled "Resources"
 
-![Resources Menu](https://raw.githubusercontent.com/tlfjar/rancher-projects/master/Resources%20Page.png)
+![Resources Menu](https://raw.githubusercontent.com/tlfjar/rancher-projects/master/Images/Resources%20Page.png)
 
 What you need to know about this for the purposes of the above tutorial is that this is where you can find the original "Workloads" button.  If anything else needs changing here, I will note it appropriately.  It is obvious that a lot more power has been injected into Rancher, and it needs to be explored.  I will try to document what I find as I do so.
 
@@ -53,11 +53,11 @@ What you need to know about this for the purposes of the above tutorial is that 
 
 I need to fully explain some of the things to, um, do with Kubernetes.  I should probably also explain it in the context of running a law firm.  To that end, I will leave you with one tidbit.  If you went through the tutorial, you may have noticed something in the "catalogs" section of Rancher:
 
-![Add Catalog](https://github.com/tlfjar/rancher-projects/blob/master/Catalog%20Screen.png?raw=true)
+![Add Catalog](https://github.com/tlfjar/rancher-projects/blob/master/Images/Catalog%20Screen.png?raw=true)
 
 You may also notice that I have an extra catalog named "docassemble."  It turns out that the maker of [Docassemble](https://github.com/jhpyle/docassemble) created a Helm Chart to deploy said program on a cluster.  It works, and it is good.  To do so, click that "Add Catalog" Button, and fill it out:
 
-![Add Docassemble](https://github.com/tlfjar/rancher-projects/blob/master/Add%20Chart.png?raw=true)
+![Add Docassemble](https://github.com/tlfjar/rancher-projects/blob/master/Images/Add%20Chart.png?raw=true)
 
 You can now use the same procedure used on longhorn to deploy Docassemble on your cluster.  However, do make sure to read the readme on its [Github page](https://github.com/jhpyle/charts) to make sure you know what you're doing first.
 
