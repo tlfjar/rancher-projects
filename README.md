@@ -29,6 +29,8 @@ As I am not particularly skilled at coding, do not expect much in the way of run
 
 I have completely revamped my system, doubling the number of workers, running the Rancher Server in a high availability environment, and separating my etcd and controlplane nodes from one another.  I'm testing this now, and if it works, I will be updating with the HA setup.
 
+I will also be cleaning up this repository, as staring at it with all of the image files all over the place is annoying.
+
 It also appears that longhorn no longer requires screwing with the files in open-iscsi.  I am testing to confirm this, but that requirement has dissappeared from their instructions.
 
 # UPDATE 12/29/2019
