@@ -12,7 +12,7 @@ The installation call is as follows:
 
 `sudo ros install -c cloud-config.yaml -d /dev/sda`
 
-If you have your file saved elsewhere, or under a different name, you can replace the `cloud-config.yaml` portion above with the link.  If you are using a private Github repository, I recommend that you download the file using the `wget` command first, as it seems that the token changes pretty quickly.
+If you have your file saved elsewhere, or under a different name, you can replace the `cloud-config.yaml` portion above with the link.  If you are using a private Github repository, I recommend that you download the file using the `wget` command first, as it seems that the token changes pretty quickly.  Also, for the sake of simplicity, go ahead and use the `mv` command to change the bizarre name the file will have to "cloud-config.yaml"
 
 You can now ssh into your server (after configuring the IP you set as static) using your ssh method of choice.  I personally use putty, because Windows.
 
