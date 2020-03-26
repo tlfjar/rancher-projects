@@ -25,6 +25,10 @@ As I am not particularly skilled at coding, do not expect much in the way of run
 4. [Using Rancher 2.x](https://github.com/tlfjar/rancher-projects/blob/master/Using-Rancher.md)
 5. [Installing Longhorn](https://github.com/tlfjar/rancher-projects/blob/master/Installing-Longhorn.md)
 
+# UPDATE 3/26/2020
+
+I have completely revamped my system, doubling the number of workers, running the Rancher Server in a high availability environment, and separating my etcd and controlplane nodes from one another.  I'm testing this now, and if it works, I will be updating with the HA setup.
+
 # UPDATE 12/29/2019
 
 Okay... Technology changes at an absolutely wacky pace, so I will try to give some updates on the latest happenings.  First, [Longhorn](https://github.com/longhorn/longhorn) has been updated, and is working better than it ever has.  I haven't had an issue with it for some time, which is excellent.  My best recommendation is to just install it and not screw with it. Ever. It will do its magic, and we can all be happy.
