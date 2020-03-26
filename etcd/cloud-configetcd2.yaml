@@ -1,0 +1,31 @@
+#Cloud_Config
+hostname: Rancheretcd2
+rancher:
+  console: ubuntu
+  network:
+    dns:
+      nameservers:
+        - 192.168.1.1
+        - 8.8.8.8
+        - 1.1.1.1
+    interfaces:
+      eth0:
+        dhcp: false
+        address: 192.168.0.61/23
+        gateway: 192.168.1.1
+        mtu: 1500
+write_files:
+  - path: /etc/rc.local
+    permissions: "0755"
+    owner: root
+    content: |
+      #!/bin/bash
+      wait-for-docker
+      sudo apt update
+      sudo apt install -y open-iscsi
+ssh_authorized_keys:
+  - ssh-rsa AAAAB3NzaC1yc2EAAAABJQAAAQBh0IY76me3n4TBmahSwOE2BOolhEkgaZDyCKXda419Nzy3vIzx5r2F5keegRUFc64jJ+zpxb6ud7cKlnK2loAopl7pdX+UmlGeDgoW64QjBOlIXxFrRkXhuTl+AeFYC0CbW90qyTTcqmmYoeswWAXE/7rtziDuy367AkLddaY9ZzjxTThphLy97jKJ08x06ovqRiIZsvNOycYtA8PS0NwOsWdqKWKmXYj8agRwjFNvwTyUDMODmUVcIKlJDVmmpOpcQwFsobml1QLXILDpvttMVB5aEHP7ptlCIjou5zMUlQT99r9jsYJS1R2O8ljt9LsniZtGtn7mpD+baKHY07J3 rancher
+  - ssh-rsa AAAAB3NzaC1yc2EAAAABJQAAAQBh0IY76me3n4TBmahSwOE2BOolhEkgaZDyCKXda419Nzy3vIzx5r2F5keegRUFc64jJ+zpxb6ud7cKlnK2loAopl7pdX+UmlGeDgoW64QjBOlIXxFrRkXhuTl+AeFYC0CbW90qyTTcqmmYoeswWAXE/7rtziDuy367AkLddaY9ZzjxTThphLy97jKJ08x06ovqRiIZsvNOycYtA8PS0NwOsWdqKWKmXYj8agRwjFNvwTyUDMODmUVcIKlJDVmmpOpcQwFsobml1QLXILDpvttMVB5aEHP7ptlCIjou5zMUlQT99r9jsYJS1R2O8ljt9LsniZtGtn7mpD+baKHY07J3 rancher rancher@rancher
+  - ssh-rsa AAAAB3NzaC1yc2EAAAABJQAAAQBh0IY76me3n4TBmahSwOE2BOolhEkgaZDyCKXda419Nzy3vIzx5r2F5keegRUFc64jJ+zpxb6ud7cKlnK2loAopl7pdX+UmlGeDgoW64QjBOlIXxFrRkXhuTl+AeFYC0CbW90qyTTcqmmYoeswWAXE/7rtziDuy367AkLddaY9ZzjxTThphLy97jKJ08x06ovqRiIZsvNOycYtA8PS0NwOsWdqKWKmXYj8agRwjFNvwTyUDMODmUVcIKlJDVmmpOpcQwFsobml1QLXILDpvttMVB5aEHP7ptlCIjou5zMUlQT99r9jsYJS1R2O8ljt9LsniZtGtn7mpD+baKHY07J3 rancher rancher@192.168.2.249
+  - ssh-rsa AAAAB3NzaC1yc2EAAAABJQAAAQBh0IY76me3n4TBmahSwOE2BOolhEkgaZDyCKXda419Nzy3vIzx5r2F5keegRUFc64jJ+zpxb6ud7cKlnK2loAopl7pdX+UmlGeDgoW64QjBOlIXxFrRkXhuTl+AeFYC0CbW90qyTTcqmmYoeswWAXE/7rtziDuy367AkLddaY9ZzjxTThphLy97jKJ08x06ovqRiIZsvNOycYtA8PS0NwOsWdqKWKmXYj8agRwjFNvwTyUDMODmUVcIKlJDVmmpOpcQwFsobml1QLXILDpvttMVB5aEHP7ptlCIjou5zMUlQT99r9jsYJS1R2O8ljt9LsniZtGtn7mpD+baKHY07J3 rancher rancher@192.168.2.24
+  - ssh-rsa AAAAB3NzaC1yc2EAAAABJQAAAQBh0IY76me3n4TBmahSwOE2BOolhEkgaZDyCKXda419Nzy3vIzx5r2F5keegRUFc64jJ+zpxb6ud7cKlnK2loAopl7pdX+UmlGeDgoW64QjBOlIXxFrRkXhuTl+AeFYC0CbW90qyTTcqmmYoeswWAXE/7rtziDuy367AkLddaY9ZzjxTThphLy97jKJ08x06ovqRiIZsvNOycYtA8PS0NwOsWdqKWKmXYj8agRwjFNvwTyUDMODmUVcIKlJDVmmpOpcQwFsobml1QLXILDpvttMVB5aEHP7ptlCIjou5zMUlQT99r9jsYJS1R2O8ljt9LsniZtGtn7mpD+baKHY07J3 rancher rancher
