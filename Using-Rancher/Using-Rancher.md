@@ -32,17 +32,17 @@ First, on the system project, click on "Workloads" on the menu on top of the scr
 
 Click on "Load Balancing":
 
-![Image of Rancher](https://raw.githubusercontent.com/tlfjar/rancher-projects/Using-Rancher/Images/System%20workloads%20A.png)
+![Image of Rancher](https://raw.githubusercontent.com/tlfjar/rancher-projects/master/Using-Rancher/Images/System%20workloads%20A.png)
 
 The next screen will have a button that says "add ingress".  Click it, and you'll be brought to this screen, which you will fill out as shown:
 
-![Image of Rancher](https://raw.githubusercontent.com/tlfjar/rancher-projects/Using-Rancher/Images/Rancher%20ingress.png)
+![Image of Rancher](https://raw.githubusercontent.com/tlfjar/rancher-projects/master/Using-Rancher/Images/Rancher%20ingress.png)
 
 Change <yourinternalsitehere> to whatever your internal site is, click save, and then hop over to PFSense.  Make sure that "DNS Resolver" is active, and add "longhorn.<yourinternalsitehere> in the resolver (I can give instructions on that if needed).  Point that address to ANY of the IP addresses used for your cluster agents EXCEPT the one that actually runs the rancher server.  If you want, you could also set up a load balancer, but I'm not going to both y'all with it at the moment.  Just point it to one of the agents.
 
 Go to whatever site it is, and you should see this:
 
-![Image of Rancher](https://raw.githubusercontent.com/tlfjar/rancher-projects/Using-Rancher/Images/Longhorn%20ui%20screen.png)
+![Image of Rancher](https://raw.githubusercontent.com/tlfjar/rancher-projects/master/Using-Rancher/Images/Longhorn%20ui%20screen.png)
 
 You can apply this concept endlessly, just make sure that you always set an app that you are launching to "ClusterIP." Rancher gets mad at you if you set it to "LoadBalancer."  Those sentences will make way more sense when you start deploying apps.
 
