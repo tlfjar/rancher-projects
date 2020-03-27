@@ -16,7 +16,9 @@ If you have your file saved elsewhere, or under a different name, you can replac
 
 You can now ssh into your server (after configuring the IP you set as static) using your ssh method of choice.  I personally use putty, because Windows.
 
-## Post-Install Configuration - NOTE: THIS APPEARS TO BE DEPRECIATED. I AM TESTING TO CONFIRM.
+## Post-Install Configuration
+
+*UPDATE:  this still seems necessary.  I do not know why.  With that said, I have a quicker method of fixing it below.*
 
 You may have noticed that I added an open-iscsi install into the cloud-config.yaml file above.  To make that work, we need to make one change to open-iscsi's configuration file.  Do the following:
 
@@ -24,7 +26,7 @@ You may have noticed that I added an open-iscsi install into the cloud-config.ya
 
 NOTE: that was probably totally unnecessary, but it is good practice for doing it three more times shortly, and it doesn't hurt anything.
 
-You'll want to do this a total of four times, once for the VM/Computer that will run Rancher Server, and three more times for the VMs/Computers that will run Rancher Agent.  Be sure to give each VM a unique name, but **do not use odd characters for the hostnames of your nodes! use something generic, letters and numbers only, no caps, like "rancherw1," etc... - NOTE: THIS SEEMS TO NO LONGER BE AN ISSUE, EITHER**
+You'll want to do this a total of four times, once for the VM/Computer that will run Rancher Server, and three more times for the VMs/Computers that will run Rancher Agent.  Be sure to give each VM a unique name.  **The prior requirement that everything be lower-case is no longer an issue.**
 
 ## Continue Reading...
 1. [Home](https://github.com/tlfjar/rancher-projects/blob/master/README.md)
