@@ -1,12 +1,12 @@
 # Installing RancherOS
 
-Now, to the meat of things.  I am running rancher on [RancherOS](https://github.com/rancher/os/releases) (Latest stable version, and the vmware-specific ISO), using [this cloud-config.yaml](https://github.com/tlfjar/rancher-projects/blob/master/RancherServer/cloud-config.yaml) as the configuration file.  You will want to change the network parts of that file and the ssh keys to fit your environment, and there are a lot of additional features you can put into that file if you'd like, many of which can be found [here](https://rancher.com/docs/os/v1.x/en/installation/configuration/).  You can download it using this call:
+Now, to the meat of things.  I am running rancher on [RancherOS](https://github.com/rancher/os/releases) (Latest stable version, and the vmware-specific ISO), using [this generic cloud-config.yaml](https://github.com/tlfjar/rancher-projects/blob/master/RancherServer/cloud-config.yaml) as the configuration file.  You will want to change the network parts of that file and the ssh keys to fit your environment, and there are a lot of additional features you can put into that file if you'd like, many of which can be found [here](https://rancher.com/docs/os/v1.x/en/installation/configuration/).  You can download it using this call:
 
 `wget https://raw.githubusercontent.com/tlfjar/rancher-projects/master/RancherServer/cloud-config.yaml`
 
 Edit the file using the following:
 
-`vi cloud-config.yaml` and then press `i` to edit ("insert," technically).  When you're done, press the "escape" key and then type `:wq`
+`vi cloud-config.yaml` and then press `i` to edit ("insert," technically).  When you're done, press the "escape" key and then type `:wq`.  Give each node a unique name.  My current configs are found [here](https://github.com/tlfjar/rancher-projects/blob/master/controlplane), [here](https://github.com/tlfjar/rancher-projects/blob/master/etcd), and [here](https://github.com/tlfjar/rancher-projects/blob/master/workers).  **DO NOT USE THESE FILES WITHOUT FIRST EDITING THEM.**  Also, don't worry about the folder names at the moment.  I will write something separate for production-ready systems.
 
 The installation call is as follows:
 
@@ -24,9 +24,15 @@ You may have noticed that I added an open-iscsi install into the cloud-config.ya
 
 `sudo vi /etc/iscsi/iscsid.conf` Once again press `i`, comment `iscsid.startup = /bin/systemctl start iscsid.socket`, and uncomment `iscsid.startup = /sbin/iscsid`.  Press the "Escape" key and then type `:wq` to exit.
 
-NOTE: that was probably totally unnecessary, but it is good practice for doing it three more times shortly, and it doesn't hurt anything.
+<p align="center">
+OR
+</p>
 
-You'll want to do this a total of four times, once for the VM/Computer that will run Rancher Server, and three more times for the VMs/Computers that will run Rancher Agent.  Be sure to give each VM a unique name.  **The prior requirement that everything be lower-case is no longer an issue.**
+Just upload this handy, preconfigured [iscsi.conf](iscsi.conf) file straight into your node, overwriting your original iscsi.conf file and skipping a very annoying part of the install process.
+
+
+
+You'll want to do all of this a total of four times, once for the VM/Computer that will run Rancher Server, and three more times for the VMs/Computers that will run Rancher Agent.  Be sure to give each VM a unique name.  *The prior requirement that everything be lower-case is no longer an issue.*
 
 ## Continue Reading...
 1. [Home](https://github.com/tlfjar/rancher-projects/blob/master/README.md)
