@@ -28,8 +28,11 @@ You may have noticed that I added an open-iscsi install into the cloud-config.ya
 OR
 </p>
 
-Just upload this handy, preconfigured [iscsid.conf](iscsid.conf) file straight into your node, overwriting your original iscsi.conf file and skipping a very annoying part of the install process.
+Just upload this handy, preconfigured [iscsid.conf](iscsid.conf) file straight into your node, overwriting your original iscsi.conf file and skipping a very annoying part of the install process.  to do so, use this code:
 
+```
+sudo wget https://raw.githubusercontent.com/tlfjar/rancher-projects/master/Install-RancherOS/iscsid.conf -O /etc/iscsi/iscsid.conf
+```
 
 
 You'll want to do all of this a total of four times, once for the VM/Computer that will run Rancher Server, and three more times for the VMs/Computers that will run Rancher Agent.  Be sure to give each VM a unique name.  *The prior requirement that everything be lower-case is no longer an issue.*
