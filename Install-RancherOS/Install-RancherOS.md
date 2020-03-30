@@ -28,7 +28,7 @@ You may have noticed that I added an open-iscsi install into the cloud-config.ya
 OR
 </p>
 
-Just upload this handy, preconfigured [iscsi.conf](iscsi.conf) file straight into your node, overwriting your original iscsi.conf file and skipping a very annoying part of the install process.
+Just upload this handy, preconfigured [iscsid.conf](iscsid.conf) file straight into your node, overwriting your original iscsi.conf file and skipping a very annoying part of the install process.
 
 
 
