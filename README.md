@@ -1,5 +1,5 @@
 # Rancher 2.x for Lawyers
-Running Rancher on RancherOS in a remarkably silly environment.
+Running Rancher on ~~RancherOS~~ **K3OS (COMING SOON)** in a remarkably silly environment.
 
 NOTE: This is very much a work in progress, and I'd appreciate any help.  I'm learning this as I go, probably the same as most people that stumble on this REPO.
 
@@ -24,6 +24,14 @@ As I am not particularly skilled at coding, do not expect much in the way of run
 3. [Installing Rancher](https://github.com/tlfjar/rancher-projects/blob/master/Install-Rancher-Server/Install-Rancher-Server.md)
 4. [Using Rancher 2.x](https://github.com/tlfjar/rancher-projects/blob/master/Using-Rancher/Using-Rancher.md)
 5. [Installing Longhorn](https://github.com/tlfjar/rancher-projects/blob/master/Installing-Longhorn/Installing-Longhorn.md)
+
+# UPDATE 11/10/2021
+
+So... COVID happened, which was both an adjustment for the legal community and just not fun in general.  As events unfolded, I was messing around with other projects and completely forgot to update this one, despite continuing to work with [Rancher](https://github.com/rancher/rancher).  The team over there has been working really hard over the year-and-a-half since I last updated, and I really need to update this guide with the rather significant changes they've made.  You can still do everything basically the same as I outlined, even with the latest edition of Rancher, but the inclusion of the Cluster Manager streamlines the overall process and makes Section 5 totally obsolete.
+
+As you can see from the first sentence up top, there's been another major change that affects what I previously wrote: [RancherOS is no longer being actively maintained.](https://rancher.com/docs/os/v1.x/en/support/)  Fortunately, this isn't a bad thing at all, because [K3OS](https://github.com/rancher/k3os) is at a point that it has the advantages RancherOS did as a minimal kubernetes platform with less effort and even less overhead.  There's a quirk or two about its installation that needs to be covered, so I will leave the RancherOS section up until I can prepare a proper replacement section.
+
+Long story short, this entire guide needs a rewrite.  Fortunately, the process is easier now, and thus the guide won't have to be as long.  I have also found a few ways to roll steps together by simply adding sections to the config.yaml files.  Since I've already done that in the office, I just need to sanitize the files, get them uploaded, and probably explain what they do.  This may take a bit, so stay tuned!
 
 # UPDATE 3/26/2020
 
