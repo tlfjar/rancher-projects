@@ -40,7 +40,7 @@ You'll want to do all of this a total of four times, once for the VM/Computer th
 
 1. [Home](https://github.com/tlfjar/rancher-projects/blob/master/README.md)
 2. [My Office Setup](https://github.com/tlfjar/rancher-projects/blob/master/office-setup/office-setup.md)
-3. [Installing K3OS](https://github.com/tlfjar/rancher-projects/blob/master/Install-RancherOS/Install-RancherOS.md)
+3. [Installing K3OS](https://github.com/tlfjar/rancher-projects/blob/master/Install-K3OS/Install-K3OS.md)
 4. [Installing Rancher](https://github.com/tlfjar/rancher-projects/blob/master/Install-Rancher-Server/Install-Rancher-Server.md)
 5. [Installing RancherOS LEGACY](https://github.com/tlfjar/rancher-projects/blob/master/Install-RancherOS-Legacy/Install-RancherOS.md)
 6. [Installing Rancher LEGACY](https://github.com/tlfjar/rancher-projects/blob/master/Install-Rancher-Server-Legacy/Install-Rancher-Server.md)
