@@ -23,9 +23,7 @@ In this setup, you're going to want at least two servers. These can be VM's or t
 
 ## Post-Install Configuration
 
-Now for the fun part. First, ssh into each K3OS system you plan to run Rancher on. Type `export KUBECONFIG=/etc/rancher/k3s/k3s.yaml`. This is necessary because of a quirk in K3os that leaves two k3s.yaml files on the system, and rancher will want to hook into the wrong one.
-
-Next, let's install [Helm](https://helm.sh/). Unless something is changed that I don't know about, K3OS still does not include a package manager. That's alright, we just need to do things the old-fashioned way. The easiest option in my experience is to just use the following commands:
+The main thing you need to do at this point is install [Helm](https://helm.sh/). Unless something is changed that I don't know about, K3OS still does not include a package manager. That's alright, we just need to do things the old-fashioned way. The easiest option in my experience is to just use the following commands:
 
 ```
 
