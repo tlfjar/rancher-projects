@@ -8,6 +8,10 @@ The very first thing to do is create a datastore on another computer, VM, or the
 
 If you're like me and want to do things the hard way, here's what you need to do:
 
+### Option 1: MySQL with at least two nodes.
+
+For a time, this was the only effective option for HA on K3OS.  Fortunately, native ETCD support was added in k3s version v1.19.5+k3s1, and the most recent version of K3OS uses v1.21.5+k3s2.  It is the better option, PROVIDED that you don't mind running three or more nodes.  If that isn't an option, or if you just really, really hate time and want to kill as much of it as possible, then continue reading...
+
 1. [Install MySQL](https://dev.mysql.com/doc/mysql-installation-excerpt/5.7/en/linux-installation.html);
 2. If you have to, [initialize the data directory.](https://dev.mysql.com/doc/mysql-installation-excerpt/5.7/en/data-directory-initialization.html) This isn't necessary if you use most native packaging options built in to normal Linux distros.
 3. [Start the server](https://dev.mysql.com/doc/mysql-installation-excerpt/5.7/en/starting-server.html) and [secure the admin user in mysql](https://dev.mysql.com/doc/mysql-installation-excerpt/5.7/en/default-privileges.html).
@@ -15,7 +19,11 @@ If you're like me and want to do things the hard way, here's what you need to do
 5. Type `CREATE DATABASE rancher;`. It'll return something that hopefully is not an error.
 6. Type `CREATE USER 'rancher'@'%' IDENTIFIED BY 'password'`. Ideally, you'll want to set up two users, each with the very specific IP address that your servers will be using instead of '%'. If it is an internal database, thoroughly secured from outside connections, then this isn't necessary, but do it anyway. The habit is good to have. Oh, and use a password that will be easy to include in a connection string.
 7. Type `GRANT ALL PRIVILEGES ON rancher.* TO 'rancher'@'%';`. Your version of mysql may or may not require the word "PRIVILEGES." If that goes through alright, go ahead and type `FLUSH PRIVILEGES`. You can now get out of mysql.
-8. Make your database reachable from the outside. Easiest way to do that is to simply [follow this guide.](https://phoenixnap.com/kb/mysql-remote-connection) I'd type it out but there are too many permutations that depend on the type of firewall present in your distro.
+8. Make your database reachable from the outside. Easiest way to do that is to simply [follow this guide.](https://phoenixnap.com/kb/mysql-remote-connection) I'd type it out but there are too many permutations that depend on the type of firewall present in your distro. This is where you are most likely to hit a snag of some sort.  If you get an 8080 error from your K3OS nodes after they've been fired up, assume there's an authentication issue between your nodes and MySQL. I promise that knowing this will save you a lot of fruitless web searches down the line.
+
+### Option 2: ETCD with at least three nodes (NEW).
+
+As you read above, this is the easier option, so much so that all you need to do is install K3OS as described below, only use [this config file](https://github.com/tlfjar/rancher-projects/blob/master/Install-K3OS/configetcd1.yml) instead of the one listed below for the first server.  Get it spun up, and then join two other servers to it using [this config file](https://github.com/tlfjar/rancher-projects/blob/master/Install-K3OS/configetcd2.yml). Otherwise, do everything described below.
 
 ## Install K3OS
 
