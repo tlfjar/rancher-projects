@@ -1,8 +1,8 @@
 #cloud-config
 hostname: MY_SERVER_NAME
 ssh_authorized_keys:
-  #- ssh-rsa AAAAB3NzaC1...== rancher
-  - github:YOUR_USERNAME
+  #- "ssh-rsa AAAAB3NzaC1...== rancher"
+  - "github:YOUR_USERNAME"
 k3os:
   dns_nameservers:
     #Include your local dns here, if you have one.
