@@ -1,0 +1,18 @@
+#cloud-config
+hostname: MY_SERVER_NAME
+ssh_authorized_keys:
+  #- ssh-rsa AAAAB3NzaC1...== rancher
+  - github:YOUR_USERNAME
+k3os:
+  dns_nameservers:
+    #Include your local dns here, if you have one.
+    - 8.8.8.8
+    - 8.8.4.4
+  ntp_servers:
+    - 0.nl.pool.ntp.org
+    - 1.nl.pool.ntp.org
+  #I hope you remember what you used for a token on the first file, because you need it now.
+  token: SECRET
+  k3s_args:
+    - server
+    - "--server https://LEAD.SERVER.IP.HERE:6443"
