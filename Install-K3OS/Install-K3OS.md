@@ -53,6 +53,8 @@ $ sudo mv linux-amd64/helm /usr/local/bin/helm
 
 If you use the second option, go ahead and type `helm`.  It should give you Helm's help dialogue.  If it does not, then something has gone haywire.  Feel free to create an issue and I will try to help.
 
+K3s, and by extension K3OS, use a non-standard config file that Helm will not instantly find.  Kubectl will, but not Helm.  To fix this, go ahead and type `export KUBECONFIG=/etc/rancher/k3s/k3s.yaml`.  The issue should now be fixed.
+
 Either way, things will happen, and you will end up with a helm install that is there for the sole purpose of installing Rancher.
 
 ## Set up a Load Balancer
