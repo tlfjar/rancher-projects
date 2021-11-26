@@ -41,7 +41,19 @@ $ ./get_helm.sh
 
 ```
 
-Things will happen, and you will end up with a helm install that is there for the sole purpose of the Rancher chart.
+...if that actually works and you can figure out how to get around openssl not being included with K3OS.  If you don't feel like screwing with the install script, do this (changing the version of helm in the event that a newer one is available when you read this):
+
+```
+
+$ wget https://get.helm.sh/helm-v3.7.1-linux-amd64.tar.gz
+$ tar -zxvf helm-v3.7.1-linux-amd64.tar.gz
+$ sudo mv linux-amd64/helm /usr/local/bin/helm
+
+```
+
+If you use the second option, go ahead and type `helm`.  It should give you Helm's help dialogue.  If it does not, then something has gone haywire.  Feel free to create an issue and I will try to help.
+
+Either way, things will happen, and you will end up with a helm install that is there for the sole purpose of installing Rancher.
 
 ## Set up a Load Balancer
 
