@@ -1,0 +1,18 @@
+#cloud-config
+hostname: MY_SERVER_NAME
+ssh_authorized_keys:
+  #- ssh-rsa AAAAB3NzaC1...== rancher
+  - github:YOUR_USERNAME
+k3os:
+  dns_nameservers:
+    #Include your local dns here, if you have one.
+    - 8.8.8.8
+    - 8.8.4.4
+  ntp_servers:
+    - 0.nl.pool.ntp.org
+    - 1.nl.pool.ntp.org
+  #make something up for the token. Make sure you remember it.
+  token: SECRET
+  k3s_args:
+    - server
+    - "--cluster-init"
