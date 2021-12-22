@@ -1,6 +1,6 @@
 # Rancher 2.x for Lawyers
 
-Running Rancher on ~~RancherOS~~ **K3OS (COMING SOON)** in a remarkably silly environment.
+Running Rancher on ~~RancherOS~~ **K3OS** in a remarkably silly environment.
 
 NOTE: This is very much a work in progress, and I'd appreciate any help. I'm learning this as I go, probably the same as most people that stumble on this REPO.
 
